@@ -5,8 +5,8 @@ import deepchem as dc
 class SeluTest(test.TestCase):
 	def _npSelu(self, np_features):
 		scale = 1.0507009873554804934193349852946
-		scale_alpha = 1.7580993408473768599402175208123
-		return np.where(np_features < 0, scale_alpha * (np.exp(np_features) - 1), scale * np_features)
+		alpha = 1.7580993408473768599402175208123
+		return np.where(np_features < 0, alpha * (np.exp(np_features) - 1), scale * np_features)
 
 
 	def testNpSelu(self):
